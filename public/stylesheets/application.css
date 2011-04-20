@@ -1,0 +1,76 @@
+#game-pad {
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    /*background: #eee;*/
+}
+
+#green, #red, #yellow, #blue {
+    height: 100px;
+    width: 200px; 
+}
+
+#ctrl-container {
+    height: 100px;
+    clear: both;
+    float: right;
+}
+
+#ctrl {
+    width: 500px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#green {
+    float: left;
+}
+
+#green.off {
+    background: #006600;
+}
+
+#green.on {
+    background: #00FF00;
+}
+
+#red {
+    float: right;
+}
+
+#red.off {
+    background: #660000;
+}
+
+#red.on {
+    background: #FF0000;
+}
+
+#yellow {
+    clear: both;
+    float: left;
+    bottom: 0px;
+}
+
+#yellow.off {
+    background: #CC9900;
+}
+
+#yellow.on {
+    background: #FFFF00;
+}
+
+#blue {
+    float: right;
+    bottom: 0px;
+}
+
+#blue.off {
+    background: #000066;
+}
+
+#blue.on {
+    background: #0000FF;
+}

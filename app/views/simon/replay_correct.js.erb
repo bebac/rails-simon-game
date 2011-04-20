@@ -1,0 +1,12 @@
+function toggle() {
+  $("#<%= @color %>").toggleClass('off on');
+}
+
+setTimeout("toggle()", 300);
+
+<% if @index == @sequence.length %>  
+  $('#ctrl').empty();
+  $('#ctrl').append("CORRECT!<br><%= escape_javascript(link_to 'continue', 'simon/continue', :remote => true) %>");
+<% else %>
+  setup_replay_links(<%= @index %>)
+<% end %>

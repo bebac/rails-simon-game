@@ -1,4 +1,11 @@
 RailsJqueryBase::Application.routes.draw do
+  get "simon/index"
+  get "simon/start"
+
+  match "simon/replay/:index/:color" => "simon#replay", :index => /\d+/, :via => :post
+
+  get "simon/continue"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +55,7 @@ RailsJqueryBase::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "simon#index"
 
   # See how all your routes lay out with "rake routes"
 

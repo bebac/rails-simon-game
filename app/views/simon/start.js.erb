@@ -1,0 +1,43 @@
+s = []
+<% @sequence.each do |color| %>
+  s.push("<%= color %>");
+<% end %>
+
+var i = 0
+var state = 0
+
+function run() {
+  if ( i < s.length) {
+    if ( state == 0 ) {
+      setTimeout('on()', 500);
+    }
+    else {
+      setTimeout('off()', 500);
+    }
+  }
+  else {
+    setTimeout('end()', 0);
+  }
+}
+
+function end() {
+  $('#ctrl').append('replay sequence')
+  setup_replay_links(0);
+}
+
+function on() {
+  $('#'+s[i]).toggleClass('off on');
+  state = 1;
+  run();
+};
+
+function off() {
+  $('#'+s[i]).toggleClass('off on');
+  state = 0;
+  i++
+  run();
+};
+
+$('#ctrl').empty();
+
+run();

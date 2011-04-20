@@ -1,0 +1,9 @@
+function toggle() {
+  $("#<%= @color %>").toggleClass('off on');
+}
+
+setTimeout("toggle()", 300);
+
+$('#ctrl').empty();
+$('#ctrl').append("WRONG!<br><%= escape_javascript(link_to 'restart', 'simon/start', :remote => true) %>");
+
